@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "bb584769-f1ec-4446-bb61-58bda985462a",
+		"name": "Week8",
+		"description": "Week 8 testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add item",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0e7193de-73cb-470b-8e5e-cdce4bb96c49",
+						"exec": [
+							"pm.test(\"Returns ok!\", function() {",
+							"    pm.expect(pm.response.json().message).to.equal(\"OK!\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"1\",\n\t\"name\": \"Syr\",\n\t\"price\": 1000,\n\t\"count\": 3\n}\n"
+				},
+				"url": {
+					"raw": "localhost:8080/shop/manager/addItem",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"shop",
+						"manager",
+						"addItem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Items",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "198fa522-e8b5-4247-8006-13c75190216e",
+						"exec": [
+							"pm.test(\"Got 1 item\", function() {",
+							"    pm.expect(pm.response.json().items).has.length(1);",
+							"    pm.expect(pm.response.json().items[0].count).to.equal(3);",
+							"    pm.expect(pm.response.json().items[0].id).to.equal(\"1\");",
+							"    pm.expect(pm.response.json().items[0].name).to.equal(\"Syr\");",
+							"    pm.expect(pm.response.json().items[0].price).to.equal(1000);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/shop/manager/getItems",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"shop",
+						"manager",
+						"getItems"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "purchase item",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
