@@ -1,10 +1,8 @@
 package week7
 
-import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport._
 import spray.json.DefaultJsonProtocol._
 import spray.json.RootJsonFormat
 import week7.actors.Library
-import week7.model
 import week7.model.ErrorInfo
 
 trait JsonSupport {

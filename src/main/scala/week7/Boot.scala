@@ -2,19 +2,10 @@ package week7
 
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
-import akka.stream.ActorMaterializer
-import akka.http.scaladsl.model._
 import akka.http.scaladsl.server.Directives._
-import model.{Book => BookModel}
-import week7.actors.Library
-import akka.pattern.ask
-import akka.util.Timeout
-import spray.json.DefaultJsonProtocol._
-import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport._
+import akka.stream.ActorMaterializer
 import org.slf4j.LoggerFactory
-
-import scala.concurrent.Future
-import scala.concurrent.duration._
+import week7.actors.Library
 
 
 object Boot extends App with LibraryRoutes {
