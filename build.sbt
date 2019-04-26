@@ -20,5 +20,9 @@ libraryDependencies ++= Seq(
   "com.typesafe.slick" %% "slick" % slickVersion,
   "com.typesafe.slick" %% "slick-hikaricp" % slickVersion,
   "com.typesafe.slick" %% "slick-codegen" % slickVersion,
-  "mysql" % "mysql-connector-java" % mysqlVersion
+  "mysql" % "mysql-connector-java" % mysqlVersion,
+  "org.postgresql" % "postgresql" % "9.4-1206-jdbc42"
 )
+
+enablePlugins(JavaAppPackaging)
+packageName in Universal := "app"
